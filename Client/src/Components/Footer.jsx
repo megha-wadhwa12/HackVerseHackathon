@@ -1,12 +1,5 @@
 import React, { useContext } from "react";
-import {
-  Box,
-  Flex,
-  Heading,
-  Text,
-  Image,
-  Icon,
-} from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Image, Icon } from "@chakra-ui/react";
 import Theme from "./Theme";
 import FaceBook from "./../assets/FacebookCircled.png";
 import Instagram from "./../assets/InstagramIcon.png";
@@ -27,7 +20,7 @@ const Footer = () => {
         px={[4, 6, 8, 10]} // Responsive padding
         pt={[8, 12, 16, "70px"]} // Responsive padding
         textAlign={"left"}
-        fontSize={["14px", "16px", "18px", "12px", "10px"]} // Responsive font size
+        fontSize={["14px", "16px", "18px", "14px", "10px"]} // Responsive font size
         gap={[6, 8, 10, 10]} // Responsive gap between sections
         width={["90%", "90%", "80%", "95%", "95%"]} // Responsive width
         m="0 auto" // Center align horizontally
@@ -38,10 +31,18 @@ const Footer = () => {
         {/* Section: More About Edu Flex */}
         <Flex flexDirection="column" flex="1" mb={[6, 6, 6, 0]}>
           <Heading size="md" mb={5}>
-            More About Edu Flex
+            More About Code Gen
           </Heading>
-          <Text width={["100%", "100%", "100%", 290]}> {/* Responsive text width */}
-            EduFlex is an innovative e-learning platform designed to revolutionize online learning experiences by prioritizing user engagement and offering personalized learning paths. Powered by AI-based technologies, EduFlex enables users to learn any topic of their choice through interactive content and quizzes.
+          <Text width={["100%", "100%", "100%", 290]}>
+            {" "}
+            {/* Responsive text width */}
+            CodeGen is a transformative platform revolutionizing the coding
+            experience through the seamless integration of AI technologies. With
+            an AI-powered chatbot for efficient navigation, a code debugger
+            capable of swiftly identifying and resolving errors, and an
+            educational topic searcher providing comprehensive insights, CodeGen
+            offers a comprehensive toolkit for both novice and experienced
+            programmers alike.{" "}
           </Text>
         </Flex>
 
@@ -77,12 +78,26 @@ const Footer = () => {
             <Image src={Phone} width={"25px"} height={"25px"} />
             <Text>Contact Us</Text>
           </Flex>
-          <Flex gap={6} alignItems="center" cursor="pointer" onClick={() => { window.location.href = "mailto:meghawadhwa20@gmail.com" }}>
+          <Flex
+            gap={6}
+            alignItems="center"
+            cursor="pointer"
+            onClick={() => {
+              window.location.href = "mailto:meghawadhwa20@gmail.com";
+            }}
+          >
             {/* Gmail contact */}
             <Image src={GmailIcon} width={"25px"} height={"25px"} />
             <Text>meghawadhwa20@gmail.com</Text>
           </Flex>
-          <Flex gap={6} alignItems="center" cursor="pointer" onClick={() => { window.location.href = "mailto:sp577152@gmail.com" }}>
+          <Flex
+            gap={6}
+            alignItems="center"
+            cursor="pointer"
+            onClick={() => {
+              window.location.href = "mailto:sp577152@gmail.com";
+            }}
+          >
             {/* Gmail contact */}
             <Image src={GmailIcon} width={"25px"} height={"25px"} />
             <Text>sp577152@gmail.com</Text>
@@ -91,8 +106,9 @@ const Footer = () => {
           {/* Copyright */}
           <Flex gap={0} mt={12} mb={5} align="center">
             <Icon as={RiCopyrightLine} mr={1} />
-            <Text fontSize={["10px", "10px", "12px", "8px"]} w="210px">
-              2024 Edu Flex. All rights are reserved | Designed by Megha Wadhwa & S P Jyotiranjan Sahoo
+            <Text fontSize={["10px", "10px", "12px", "10px"]} w="210px">
+              2024 Code Gen. All rights are reserved | Designed by Megha Wadhwa
+              & S P Jyotiranjan Sahoo
             </Text>
           </Flex>
         </Flex>

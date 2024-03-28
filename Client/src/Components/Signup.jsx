@@ -18,7 +18,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { AppContext } from "../Context/ParentContext";
-import Logo from "./../assets/EduFlexLogo.png";
+import Logo from "./../assets/CodeGen.png";
 import { ViewIcon } from "@chakra-ui/icons";
 
 const Signup = () => {
@@ -213,7 +213,7 @@ const Signup = () => {
                       },
                       pattern: {
                         value:
-                          /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                          /^(?=.[A-Za-z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%*?&]{8,}$/,
                         message: "Invalid Password",
                       },
                     })}

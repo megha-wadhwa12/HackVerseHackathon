@@ -40,7 +40,7 @@ const Home = () => {
             color={Theme.colors.secondary[100]}
             fontSize="7vw"
           >
-            EDUFLEX
+            CODEGEN
           </Heading>
           <Text
             fontFamily={Theme.fonts.subHeading}
@@ -48,7 +48,7 @@ const Home = () => {
             fontSize="2.3vw"
             my="2vw"
           >
-            Redefining online learning through AI
+            Redefining coding experience through AI
           </Text>
           <Button
             size="md"
