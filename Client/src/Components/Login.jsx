@@ -46,7 +46,7 @@ const Login = () => {
 
   const PostRequest = async (data) => {
     try {
-      setIsLoading(true);
+      setIsLoading(true)
       console.log("data", data);
       const res = await axios.post(
         "https://eduflex-dieh.onrender.com/api/Users/login",
@@ -56,15 +56,15 @@ const Login = () => {
       );
       console.log("res", res);
       setLogin(true);
-      setIsLoading(false);
-      setErrorMessage("");
+      setIsLoading(false)
+      setErrorMessage("")
       SuccessToastHandler();
 
       setCookies("UserName", res.data.user.UserName, 30);
       setCookies("Password", res.data.user.Password, 30);
       setCookies("Name", res.data.user.Name, 30);
     } catch (error) {
-      setIsLoading(false);
+      setIsLoading(false)
       console.log("error", error);
       if (error.response && error.response.status === 400) {
         setErrorMessage(error.response.data.error);
@@ -117,7 +117,7 @@ const Login = () => {
       <ToastContainer />
       <Navbar />
       <Box
-        backgroundImage={Background}
+          bgImage={`linear-gradient(0deg, #22033900 0.00%,#22033933 80.00%),linear-gradient(90deg, #22033966 0.00%,#22033900 30.00%),linear-gradient(90deg, #22033900 70.00%,#22033966 100.00%),linear-gradient(180deg, #22033900 30.00%,#220339 100.00%),url(${Background})`}
         backgroundSize={"cover"}
         width={"100vw"}
         height={"100vh"}
@@ -125,15 +125,17 @@ const Login = () => {
         <Flex justifyContent={"center"} alignItems={"center"}>
           <Flex
             borderRadius={12}
-            width={"30vw"}
-            height={"27vw"}
+            width={["90vw","45vw","36vw"]}
+            height={["80vh","95vh","78vh"]}
             backgroundColor={`${Theme.colors.primary[300]}90`}
             flexDir={"column"}
             p={"3vw"}
-            mt={"10vw"}
+            px={["8vw","3vw"]}
+            mt={["20vw","10vw","8vw"]}
           >
             <Image
               src={Logo}
+              mt={2}
               alt="logo"
               width={"170px"}
               height={"40px"}
@@ -197,9 +199,7 @@ const Login = () => {
                     justifyContent={"center"}
                     color={Theme.colors.primary[300]}
                   >
-                    {errorMessage && (
-                      <Center color={"red"}>{errorMessage}</Center>
-                    )}
+                    {errorMessage && <Center color={'red'}>{errorMessage}</Center>}
                   </Flex>
                   <Button
                     isLoading={isLoading}
