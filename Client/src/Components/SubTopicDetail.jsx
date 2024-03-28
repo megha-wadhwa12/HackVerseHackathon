@@ -24,7 +24,7 @@ const SubTopicDetail = ({ subTopics }) => {
   const [details, setDetails] = useState([]);
   const [fetched, setFetched] = useState(true);
   function removeAsterisks(str) {
-    return str.replace(/\*/g, ""); // Using regular expression to replace all asterisks with an empty string
+    return str.replace(/\*/g, ""); 
   }
   async function genContent(topic) {
     try {
@@ -95,7 +95,7 @@ const SubTopicDetail = ({ subTopics }) => {
     <AccordionItem>
       <h2>
         <AccordionButton>
-          <Box as="span" flex="1" textAlign="left" fontSize={"1.5vw"}>
+          <Box as="span" flex="1" textAlign="left" fontSize='2xl' >
             {subTopics}
           </Box>
           <AccordionIcon />
