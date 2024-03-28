@@ -169,7 +169,7 @@ const Content = () => {
         <Flex direction={"column"} align={"center"} my={"3vw"}>
           {content !== "" && (
             <Flex direction="column" align="center" mb="3vw"> 
-              <Heading style={{textTransform: "uppercase"}} color={"white"} mt={"8vw"} mb={"8vw"} fontSize={isMobile ? "4xl" : "4xl"}>
+              <Heading style={{textTransform: "uppercase"}} color={"white"} mt={ isMobile ? "8vw" : "1vw"} mb={isMobile ? "8vw" : "4vw"} fontSize={isMobile ? "4xl" : "4xl"}>
                 {value}
               </Heading>
               <Text w={"80vw"} textAlign={"center"} color={"white"}>
