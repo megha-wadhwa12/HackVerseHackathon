@@ -123,7 +123,7 @@ const Signup = () => {
             borderRadius={[12]} // Responsive borderRadius
             backgroundColor={`${Theme.colors.primary[300]}90`}
             width={["90vw",null,"50vw","35vw"]}
-            height={["89vh",null,"95vh","96vh"]}
+            height={["89vh",null,"95vh","80vh"]}
             flexDir={"column"}
             p={"3vw"}
             px={["8vw","3vw"]}
