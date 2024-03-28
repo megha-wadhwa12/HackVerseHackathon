@@ -6,11 +6,12 @@ import AboutUs from "./AboutUs";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import { AppContext } from "../Context/ParentContext";
+import Features from "./Features";
 
 const Home = () => {
   return (
     <>
-      <Box background={Theme.colors.primary[100]} width="99vw">
+      <Box background={Theme.colors.primary[100]} width="100vw" >
         <Flex
           direction="column"
           justify="center"
