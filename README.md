@@ -53,7 +53,7 @@ We welcome contributions from the community to improve EduFlex. If you'd like to
 2. **Clone** your forked repository to your local machine. Replace `{your-username}` with your GitHub username:
 
     ```sh
-    git clone https://github.com/{your-username}/EduFlex.git
+    git clone https://github.com/{your-username}/CodeGen.git
     ```
 
 3. **Create a new branch** for your feature or bug fix:
