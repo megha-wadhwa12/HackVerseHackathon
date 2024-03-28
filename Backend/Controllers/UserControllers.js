@@ -1,5 +1,5 @@
 const { mongoose } = require("mongoose");
-const mongooseUserModel = require("../Models/UserSchema");
+const mongooseUserModel = require("../models/UserSchema");
 require("dotenv").config();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
