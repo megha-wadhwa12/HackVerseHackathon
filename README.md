@@ -37,20 +37,53 @@ CodeGen is a revolutionary platform aimed at enriching the coding experience thr
 
 - **Gemini**: Harness the power of Gemini for AI-powered text-to-image generation, ensuring high-quality visual outputs.
 
+## Deployment
+
+- **Backend (API) Deployment:** The backend of EduFlex is deployed on [Render]().
+
+- **Frontend Deployment:** The frontend of EduFlex is deployed on [Vercel](https://codegen-phi.vercel.app/).
 
 
-## <summary><strong>Contributing</strong></summary>
 
-We welcome contributions from the coding community to enhance CodeGen further. Follow these steps to contribute:
+## Contributing
 
-1. Fork the repository by clicking the "Fork" button.
-2. Clone your forked repository to your local machine.
-3. Create a new branch for your feature or bug fix.
-4. Make changes adhering to our coding standards.
-5. Thoroughly test your changes.
-6. Commit your changes with descriptive messages.
-7. Push changes to your forked repository.
-8. Submit a Pull Request with clear title and description.
+We welcome contributions from the community to improve EduFlex. If you'd like to contribute, please follow these guidelines:
+
+1. **Fork** the repository by clicking the "Fork" button on the top right corner of this page.
+2. **Clone** your forked repository to your local machine. Replace `{your-username}` with your GitHub username:
+
+    ```sh
+    git clone https://github.com/{your-username}/EduFlex.git
+    ```
+
+3. **Create a new branch** for your feature or bug fix:
+
+    ```sh
+    git checkout -b feature/your-feature
+    ```
+
+4. **Make your changes** and ensure they adhere to our coding standards.
+5. **Test** your changes thoroughly to ensure they work as expected.
+6. **Commit** your changes with descriptive commit messages:
+
+    ```sh
+    git commit -am 'Add feature: Description of your changes'
+    ```
+
+7. **Push** your changes to your forked repository:
+
+    ```sh
+    git push origin feature/your-feature
+    ```
+
+8. **Submit a Pull Request (PR)**:
+   - Go to the GitHub page of your forked repository.
+   - Click on the "New Pull Request" button.
+   - Provide a clear title and description for your PR, explaining the changes you've made.
+   - Once reviewed, your PR will be merged into the main branch.
+
+By following these steps, you can help improve EduFlex and contribute to making it even better for users. We appreciate your contributions!
+
 
 
 
