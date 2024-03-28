@@ -3,17 +3,28 @@ import Background from "./../assets/EduFlexBackground.jpg";
 import { Box, Text, Center, Heading, Flex, Button } from "@chakra-ui/react";
 import Theme from "./Theme";
 import AboutUs from "./AboutUs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import { AppContext } from "../Context/ParentContext";
 import Features from "./Features";
 
 const Home = () => {
   const { login } = useContext(AppContext);
+  const navigate = useNavigate();
+
+  const handleTryNowClick = () => {
+    if (!login) {
+      // Redirect to login page if not logged in
+      navigate("/login");
+    } else {
+      // Redirect to content page if logged in
+      navigate("/content");
+    }
+  };
 
   return (
     <>
-      <Box background={Theme.colors.primary[100]} width="100vw">
+      <Box background={Theme.colors.primary[100]} width="99vw">
         <Flex
           direction="column"
           justify="center"
@@ -39,19 +50,17 @@ const Home = () => {
           >
             Redefining online learning through AI
           </Text>
-          <Link to={"/content"}>
-            {" "}
-            <Button
-              size="md"
-              height="48px"
-              width="180px"
-              color={Theme.colors.secondary[100]}
-              backgroundColor={`${Theme.colors.primary[200]}90`}
-              _hover={{ backgroundColor: Theme.colors.primary[200] }}
-            >
-              Try Now
-            </Button>
-          </Link>
+          <Button
+            size="md"
+            height="48px"
+            width="180px"
+            color={Theme.colors.secondary[100]}
+            backgroundColor={`${Theme.colors.primary[200]}90`}
+            _hover={{ backgroundColor: Theme.colors.primary[200] }}
+            onClick={handleTryNowClick}
+          >
+            Try Now
+          </Button>
         </Flex>
         {login && <Features />}
         <AboutUs />
