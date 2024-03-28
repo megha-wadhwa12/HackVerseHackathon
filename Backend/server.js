@@ -9,8 +9,8 @@ app.use(express.json());
 app.use(cors());
 connectDB();
 
-app.use("/api/Topics",require("./Routes/TopicRoutes"))
-app.use("/api/Users",require("./Routes/UserRoutes"))
+app.use("/api/Topics",require("./routes/TopicRoutes"))
+app.use("/api/Users",require("./routes/UserRoutes"))
 
 app.listen(port, () => {
   console.log(`App is running on PORT: ${port}`);
