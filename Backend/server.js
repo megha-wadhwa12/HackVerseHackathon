@@ -10,7 +10,7 @@ app.use(cors());
 connectDB();
 
 app.use("/api/Topics",require("./routes/TopicRoutes"))
-app.use("/api/Users",require("./routes/UserRoutes"))
+app.use("/api/Users",require("./routes/userRoutes"))
 
 app.listen(port, () => {
   console.log(`App is running on PORT: ${port}`);
