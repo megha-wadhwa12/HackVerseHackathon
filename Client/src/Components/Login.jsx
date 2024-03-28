@@ -20,7 +20,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { AppContext } from "../Context/ParentContext";
-import Logo from "./../assets/CodeGen.png";
+import Logo from "./../assets/EduFlexLogo.png";
 
 const Login = () => {
   const Navigate = useNavigate();
@@ -49,7 +49,7 @@ const Login = () => {
       setIsLoading(true)
       console.log("data", data);
       const res = await axios.post(
-        "https://eduflex-dieh.onrender.com/api/Users/login",
+        "https://hackversehackathon.onrender.com/api/Users/login",
         {
           ...data,
         }
@@ -185,7 +185,7 @@ const Login = () => {
                       },
                       pattern: {
                         value:
-                          /^(?=.[A-Za-z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                          /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
                         message: "Invalid Password",
                       },
                     })}
