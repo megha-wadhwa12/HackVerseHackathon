@@ -1,20 +1,24 @@
-import React from "react";
-import "./App.css";
-import Home from "./Components/Home";
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
-import AboutUs from "./Components/AboutUs";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react'
+import {Box} from '@chakra-ui/react'
+import Navbar from './Components/Navbar'
+import Home from './Components/Home'
+import Content from './Components/Content'
+import Signup from './Components/Signup'
+import Login from './Components/Login'
+import AllRoutes from './Components/AllRoutes'
 
-function App() {
+
+const App = () => {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Home />
-      <AboutUs />
-      <Footer />
-    </BrowserRouter>
-  );
+    <Box overflowX={'hidden'}>
+      <Navbar/>
+      <AllRoutes />
+      {/* <Home/> */}
+      {/* <Content/> */}
+      {/* <Signup />
+      <Login /> */}
+    </Box>
+  )
 }
 
-export default App;
+export default App
