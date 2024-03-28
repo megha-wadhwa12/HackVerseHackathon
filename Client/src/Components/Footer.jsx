@@ -11,7 +11,7 @@ import { AppContext } from "../Context/ParentContext";
 // import CopyrightIcon from "./../assets/CopyrightIcon.png"; // Importing copyright icon
 
 const Footer = () => {
-  const {footerRef} = useContext(AppContext)
+  const { footerRef } = useContext(AppContext);
   return (
     <Box ref={footerRef} pb={10}>
       {/* Footer section */}
@@ -23,8 +23,8 @@ const Footer = () => {
         textAlign={"left"} // Align text to left
         fontSize={"16px"}
         gap={"140px"}
-        width={'90vw'}
-        m={'0 auto'}
+        width={"90vw"}
+        m={"0 auto"}
         borderRadius={20}
         justifyContent={"center"}
         // pb={20}
@@ -35,16 +35,16 @@ const Footer = () => {
             More About Edu Flex
           </Heading>
           <Text width={290}>
-          EduFlex is an innovative e-learning platform designed to revolutionize online learning experiences by prioritizing user engagement and offering personalized learning paths. Powered by AI-based technologies, EduFlex enables users to learn any topic of their choice through interactive content and quizzes.
+            EduFlex is an innovative e-learning platform designed to
+            revolutionize online learning experiences by prioritizing user
+            engagement and offering personalized learning paths. Powered by
+            AI-based technologies, EduFlex enables users to learn any topic of
+            their choice through interactive content and quizzes.
           </Text>
         </Flex>
         {/* Section: Stay Connected */}
         <Flex flexDirection="column">
-          <Heading
-            size={"md"}
-            mb={5}
-            textAlign={"center"}
-          >
+          <Heading size={"md"} mb={5} textAlign={"center"}>
             Stay Connected
           </Heading>
           <Flex direction={"column"} gap={5}>
@@ -53,7 +53,7 @@ const Footer = () => {
               <Image src={FaceBook} width={"30px"} height={"30px"} />
               <Text>Facebook</Text>
             </Flex>
-            <Flex alignItems={"center"}  gap={6}>
+            <Flex alignItems={"center"} gap={6}>
               <Image src={Instagram} width={"25px"} height={"25px"} />
               <Text>Instagram</Text>
             </Flex>
@@ -73,28 +73,36 @@ const Footer = () => {
             <Image src={Phone} width={"25px"} height={"25px"} />
             <Text>Contact Us</Text>
           </Flex>
-          <Flex gap={6} cursor={'pointer'} onClick={()=>{
-            window.location.href = "mailto:meghawadhwa20@gmail.com"
-          }}>
+          <Flex
+            gap={6}
+            cursor={"pointer"}
+            onClick={() => {
+              window.location.href = "mailto:meghawadhwa20@gmail.com";
+            }}
+          >
             {/* Gmail contact */}
             <Image src={GmailIcon} width={"25px"} height={"25px"} />
             <Text>meghawadhwa20@gmail.com</Text>
           </Flex>
-          <Flex gap={6} cursor={"pointer"} onClick={()=>{
-            window.location.href = "mailto:sp577152@gmail.com"
-          }}>
+          <Flex
+            gap={6}
+            cursor={"pointer"}
+            onClick={() => {
+              window.location.href = "mailto:sp577152@gmail.com";
+            }}
+          >
             {/* Gmail contact */}
             <Image src={GmailIcon} width={"25px"} height={"25px"} />
             <Text>sp577152@gmail.com</Text>
           </Flex>
           {/* Copyright */}
-          <Flex gap={0} mt={250} mb={5} align={'center'}>
+          <Flex gap={0} mt={250} mb={5} align={"center"}>
             {/* <Image src={CopyrightIcon} width={3} /> */}
-              <Icon as={RiCopyrightLine} mr={1}/>
-              
+            <Icon as={RiCopyrightLine} mr={1} />
+
             <Text fontSize={12}>
-              2024 Edu Flex. All rights are reserved | Designed by Megha
-              Wadhwa & S P Jyotiranjan Sahoo
+              2024 Edu Flex. All rights are reserved | Designed by Megha Wadhwa
+              & S P Jyotiranjan Sahoo
             </Text>
           </Flex>
         </Flex>

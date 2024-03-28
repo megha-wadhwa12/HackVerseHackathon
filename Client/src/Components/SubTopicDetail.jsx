@@ -110,7 +110,9 @@ const SubTopicDetail = ({ subTopics }) => {
           </UnorderedList>
         ) : (
           <UnorderedList>
-            <Center><Spinner/></Center>
+            <Center>
+              <Spinner />
+            </Center>
           </UnorderedList>
         )}
       </AccordionPanel>

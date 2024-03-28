@@ -53,7 +53,7 @@ const Home = () => {
           </Link>
         </Flex>
         <AboutUs />
-        <Footer/>
+        <Footer />
       </Box>
     </>
   );

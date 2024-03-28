@@ -1,28 +1,28 @@
 import {
-    Box,
-    Button,
-    Center,
-    Flex,
-    FormControl,
-    FormErrorMessage,
-    Image,
-    Input,
-    Link,
-  } from "@chakra-ui/react";
-  import React, { useContext, useEffect } from "react";
-  import Background from "./../assets/EduFlexBackground.jpg";
-  import Theme from "./Theme";
-  import { useNavigate } from "react-router-dom";
-  import { useForm } from "react-hook-form";
-  import { ToastContainer, toast } from "react-toastify";
-  import "react-toastify/dist/ReactToastify.css";
-  import axios from "axios";
-  import { AppContext } from "../Context/ParentContext";
-  import Logo from "./../assets/EduFlexLogo.png";
-  import { ViewIcon } from "@chakra-ui/icons";
-  
-  const Signup = () => {
-    const Navigate = useNavigate();
+  Box,
+  Button,
+  Center,
+  Flex,
+  FormControl,
+  FormErrorMessage,
+  Image,
+  Input,
+  Link,
+} from "@chakra-ui/react";
+import React, { useContext, useEffect } from "react";
+import Background from "./../assets/EduFlexBackground.jpg";
+import Theme from "./Theme";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+import { AppContext } from "../Context/ParentContext";
+import Logo from "./../assets/EduFlexLogo.png";
+import { ViewIcon } from "@chakra-ui/icons";
+
+const Signup = () => {
+  const Navigate = useNavigate();
   const {
     login,
     setLogin,
@@ -50,9 +50,12 @@ import {
 
   const PostRequest = async (data) => {
     try {
-      const res = await axios.post("https://eduflex-dieh.onrender.com/api/Users/signup", {
-        ...data,
-      });
+      const res = await axios.post(
+        "https://eduflex-dieh.onrender.com/api/Users/signup",
+        {
+          ...data,
+        }
+      );
       setLogin(true);
       SuccessToastHandler();
       // const access = res.data.access_token;
@@ -126,8 +129,8 @@ import {
             backgroundColor={`${Theme.colors.primary[300]}90`}
             flexDir={"column"}
             p={5}
-            px={'4vw'}
-            mt={'7vw'}
+            px={"4vw"}
+            mt={"7vw"}
           >
             <Image
               src={Logo}
@@ -230,9 +233,9 @@ import {
                     {errorMessage && <Center>{errorMessage}</Center>}
                   </Flex>
                   <Button
-            bgColor={`${Theme.colors.primary[200]}80`}
-            _hover={{ backgroundColor: Theme.colors.primary[200] }}
-            color={'white'}
+                    bgColor={`${Theme.colors.primary[200]}80`}
+                    _hover={{ backgroundColor: Theme.colors.primary[200] }}
+                    color={"white"}
                     borderRadius={4}
                     mt={2}
                     px={8}
@@ -245,7 +248,9 @@ import {
                   </Button>
                 </Flex>
                 <Flex justifyContent={"center"} gap={2} mt={5}>
-                  <Center  color={Theme.colors.secondary[100]}>Already have an account?</Center>
+                  <Center color={Theme.colors.secondary[100]}>
+                    Already have an account?
+                  </Center>
                   <Link href={"/login"} color={Theme.colors.primary[200]}>
                     Login
                   </Link>
@@ -257,6 +262,6 @@ import {
       </Box>
     </Box>
   );
-}
+};
 
-export default Signup
+export default Signup;

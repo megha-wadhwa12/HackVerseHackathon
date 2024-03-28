@@ -7,9 +7,9 @@ const ParentContext = ({ children }) => {
   const [user, setUser] = useState([]);
   const [login, setLogin] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [value,setValue] = useState('')
-  const footerRef = useRef(null)
-  const aboutRef = useRef(null)
+  const [value, setValue] = useState("");
+  const footerRef = useRef(null);
+  const aboutRef = useRef(null);
 
   const setCookies = (name, value, expiry) => {
     const date = new Date();

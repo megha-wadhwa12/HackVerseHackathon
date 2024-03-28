@@ -28,18 +28,18 @@ import { AppContext } from "../Context/ParentContext";
 const Content = () => {
   const [subTopics, setSubTopics] = useState([]);
   const [value, setValue] = useState("");
-  const {login} = useContext(AppContext)
+  const { login } = useContext(AppContext);
   const [fetched, setFetched] = useState(true);
   const [contentFetched, setContentFetched] = useState(true);
   const [content, setContent] = useState("");
-  const navigate = useNavigate(null)
+  const navigate = useNavigate(null);
   const gemini_key = import.meta.env.VITE_GEMINI_API;
   const genAI = new GoogleGenerativeAI(gemini_key);
-  useLayoutEffect(()=>{
-    if(!login){
-      navigate("/login")
+  useLayoutEffect(() => {
+    if (!login) {
+      navigate("/login");
     }
-  },[])
+  }, []);
   function removeAsterisks(str) {
     return str.replace(/\*/g, ""); // Using regular expression to replace all asterisks with an empty string
   }
@@ -60,9 +60,7 @@ const Content = () => {
           },
           {
             role: "model",
-            parts: [
-              { text: "Ok, Please give me a topic" },
-            ],
+            parts: [{ text: "Ok, Please give me a topic" }],
           },
         ],
         generationConfig: {
@@ -124,9 +122,7 @@ const Content = () => {
           },
           {
             role: "model",
-            parts: [
-              { text: "Ok, Please give me a topic" },
-            ],
+            parts: [{ text: "Ok, Please give me a topic" }],
           },
         ],
         generationConfig: {
@@ -230,12 +226,20 @@ const Content = () => {
         </form>
       </Flex>
       {contentFetched ? (
-        <Flex direction={"column"} align={"center"} my={'3vw'}>
-          {content != "" && <Heading color={"white"} mb={"2vw"}>{value}</Heading>}
-          <Text w={'80vw'} textAlign={'center'} color={"white"}>{content}</Text>
+        <Flex direction={"column"} align={"center"} my={"3vw"}>
+          {content != "" && (
+            <Heading color={"white"} mb={"2vw"}>
+              {value}
+            </Heading>
+          )}
+          <Text w={"80vw"} textAlign={"center"} color={"white"}>
+            {content}
+          </Text>
         </Flex>
       ) : (
-        <Center><Heading color={'white'}>Generating ...</Heading></Center>
+        <Center>
+          <Heading color={"white"}>Generating ...</Heading>
+        </Center>
       )}
       {fetched ? (
         <Flex direction={"column"} align={"center"}>
@@ -244,7 +248,7 @@ const Content = () => {
               Learn {value} in 10 parts
             </Heading>
           )}
-          <Accordion w={"80vw"} allowToggle color={"white"} pb={'4vw'}>
+          <Accordion w={"80vw"} allowToggle color={"white"} pb={"4vw"}>
             {subTopics.map((e) => {
               return <SubTopicDetail subTopics={e} />;
             })}

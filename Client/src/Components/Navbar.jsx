@@ -17,7 +17,8 @@ import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const { login, setLogin, setCookies, getCookie,aboutRef,footerRef } = useContext(AppContext);
+  const { login, setLogin, setCookies, getCookie, aboutRef, footerRef } =
+    useContext(AppContext);
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -55,7 +56,9 @@ const Navbar = () => {
           }}
           transition={"all 0.2s"}
         >
-          <Link to={"/"}><Img src={Logo} maxH={"3vw"} /></Link>
+          <Link to={"/"}>
+            <Img src={Logo} maxH={"3vw"} />
+          </Link>
         </Box>
         <Flex w={"33%"} justify={"space-between"}>
           <Link to={"/"}>
@@ -84,9 +87,9 @@ const Navbar = () => {
               filter: "drop-shadow(0 0 0.2vw #ffffff90)",
             }}
             transition={"all 0.2s"}
-            onClick={()=>{
+            onClick={() => {
               if (footerRef.current) {
-                footerRef.current.scrollIntoView({behavior: 'smooth'})
+                footerRef.current.scrollIntoView({ behavior: "smooth" });
               }
             }}
           >
@@ -104,9 +107,9 @@ const Navbar = () => {
               filter: "drop-shadow(0 0 0.2vw #ffffff90)",
             }}
             transition={"all 0.2s"}
-            onClick={()=>{
+            onClick={() => {
               if (aboutRef.current) {
-                aboutRef.current.scrollIntoView({behavior: 'smooth'})
+                aboutRef.current.scrollIntoView({ behavior: "smooth" });
               }
             }}
           >
