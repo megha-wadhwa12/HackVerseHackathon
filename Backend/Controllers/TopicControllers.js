@@ -1,5 +1,5 @@
 const { mongo } = require("mongoose");
-const mongooseModel = require("../Models/TopicsSchema");
+const mongooseModel = require("../models/TopicsSchema");
 require("dotenv").config();
 const { DataValidationSchema } = require("../Validation");
 
