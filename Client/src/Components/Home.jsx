@@ -9,12 +9,11 @@ import { AppContext } from "../Context/ParentContext";
 import Features from "./Features";
 
 const Home = () => {
+  const { login } = useContext(AppContext);
+
   return (
     <>
-
-      <Box background={Theme.colors.primary[100]} width="100vw" >
-
-      <Box width="99vw">
+      <Box background={Theme.colors.primary[100]} width="100vw">
         <Flex
           direction="column"
           justify="center"
@@ -43,8 +42,9 @@ const Home = () => {
           <Link to={"/content"}>
             {" "}
             <Button
-              height={["36px", "36px", "40px", "40px", "40px"]} // Reversed responsive height
-              width={["140px", "140px", "160px", "160px", "160px"]} // Reversed responsive width
+              size="md"
+              height="48px"
+              width="180px"
               color={Theme.colors.secondary[100]}
               backgroundColor={`${Theme.colors.primary[200]}90`}
               _hover={{ backgroundColor: Theme.colors.primary[200] }}
@@ -53,6 +53,7 @@ const Home = () => {
             </Button>
           </Link>
         </Flex>
+        {login && <Features />}
         <AboutUs />
         <Footer />
       </Box>
