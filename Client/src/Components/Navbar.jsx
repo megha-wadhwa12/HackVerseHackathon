@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { CgProfile } from "react-icons/cg";
 import React, { useContext, useLayoutEffect, useState } from "react";
-import Logo from "./../assets/EduFlexLogo.png";
+import Logo from "./../assets/CodeGen.png";
 import Theme from "./Theme";
 import { AppContext } from "../Context/ParentContext";
 import { useNavigate } from "react-router";
