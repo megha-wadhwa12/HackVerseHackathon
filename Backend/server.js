@@ -1,16 +1,17 @@
-const express = require('express')
-require('dotenv').config()
-const cors = require('cors')
-const app=express()
-const port = process.env.PORT || 3000;
+const express = require("express");
+require("dotenv").config()
+const cors = require("cors");
+const app = express();
+const port = process.env.PORT || 3000
+const connectDB = require("./config/db");
 
 app.use(express.json());
 app.use(cors());
+connectDB();
 
-app.get('/',(req,res)=>{
-    res.send('Hello Users, We are Web Wizards')
-})
+app.use("/api/Topics",require("./Routes/TopicRoutes"))
+app.use("/api/Users",require("./Routes/UserRoutes"))
 
 app.listen(port, () => {
-    console.log(`Server is running at port ${port}`);
-  });
+  console.log(`App is running on PORT: ${port}`);
+});
