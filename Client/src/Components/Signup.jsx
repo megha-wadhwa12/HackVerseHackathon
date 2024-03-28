@@ -9,7 +9,7 @@ import {
   Input,
   Link,
 } from "@chakra-ui/react";
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import Background from "./../assets/EduFlexBackground.jpg";
 import Theme from "./Theme";
 import { useNavigate } from "react-router-dom";
@@ -88,6 +88,7 @@ const Signup = () => {
       Navigate("/");
     }, 5000);
   };
+
   const ErrorToastHandler = () => {
     if (isSubmitted && !isSubmitSuccessful) {
       for (const errorKey in errors) {
@@ -108,42 +109,38 @@ const Signup = () => {
     }
   };
 
-  useEffect(() => {
-    ErrorToastHandler();
-  }, [isSubmitted]);
-
   return (
     <Box>
       <ToastContainer />
       <Box
-        backgroundImage={Background}
+        bgImage={`linear-gradient(0deg, #22033900 0.00%,#22033933 80.00%),linear-gradient(90deg, #22033966 0.00%,#22033900 30.00%),linear-gradient(90deg, #22033900 70.00%,#22033966 100.00%),linear-gradient(180deg, #22033900 30.00%,#220339 100.00%),url(${Background})`}
         backgroundSize={"cover"}
         width={"100vw"}
-        height={"100vh"}
+        minHeight={"100vh"}
       >
         <Flex justifyContent={"center"} alignItems={"center"}>
           <Flex
-            borderRadius={12}
-            width={"420px"}
-            height={"490px"}
+            borderRadius={[12]} // Responsive borderRadius
             backgroundColor={`${Theme.colors.primary[300]}90`}
+            width={["90vw",null,"50vw","35vw"]}
+            height={["89vh",null,"95vh","96vh"]}
             flexDir={"column"}
-            p={5}
-            px={"4vw"}
-            mt={"7vw"}
+            p={"3vw"}
+            px={["8vw","3vw"]}
+            mt={["14vw", "10vw", "7vw", "7vw"]} // Responsive top margin
           >
             <Image
               src={Logo}
               alt="logo"
-              width={"170px"}
-              height={"40px"}
-              mb={"30px"}
+              width={["100px", "120px", "170px"]} // Responsive width
+              height={["30px", "36px", "40px"]} // Responsive height
+              mb={["20px", "25px", "30px"]} // Responsive margin bottom
               alignSelf={"center"}
             />
 
             <form onSubmit={handleSubmit(FormSubmitHandler)}>
               <FormControl mb={5} color={"white"}>
-                <FormControl isInvalid={errors.Name} height={50} mb={5}>
+                <FormControl isInvalid={errors.Name} mb={5}>
                   <Input
                     focusBorderColor={Theme.colors.primary[100]}
                     variant="flushed"
@@ -163,7 +160,7 @@ const Signup = () => {
                   />
                   <FormErrorMessage>{errors.Name?.message}</FormErrorMessage>
                 </FormControl>
-                <FormControl isInvalid={errors.EmailId} height={50} mb={5}>
+                <FormControl isInvalid={errors.EmailId} mb={5}>
                   <Input
                     focusBorderColor={Theme.colors.primary[100]}
                     variant="flushed"
@@ -179,7 +176,7 @@ const Signup = () => {
                   />
                   <FormErrorMessage>{errors.EmailId?.message}</FormErrorMessage>
                 </FormControl>
-                <FormControl isInvalid={errors.UserName} height={50} mb={5}>
+                <FormControl isInvalid={errors.UserName} mb={5}>
                   <Input
                     focusBorderColor={Theme.colors.primary[100]}
                     variant="flushed"
@@ -201,7 +198,7 @@ const Signup = () => {
                     {errors.UserName?.message}
                   </FormErrorMessage>
                 </FormControl>
-                <FormControl isInvalid={errors.Password} height={50} mb={5}>
+                <FormControl isInvalid={errors.Password} mb={5}>
                   <Input
                     icon={<ViewIcon />}
                     focusBorderColor={Theme.colors.primary[100]}

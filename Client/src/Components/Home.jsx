@@ -10,7 +10,7 @@ import { AppContext } from "../Context/ParentContext";
 const Home = () => {
   return (
     <>
-      <Box background={Theme.colors.primary[100]} width="99vw">
+      <Box width="99vw">
         <Flex
           direction="column"
           justify="center"
@@ -39,12 +39,9 @@ const Home = () => {
           <Link to={"/content"}>
             {" "}
             <Button
-              size="md"
-              height="48px"
-              width="180px"
-              // border="2px"
+              height={["36px", "36px", "40px", "40px", "40px"]} // Reversed responsive height
+              width={["140px", "140px", "160px", "160px", "160px"]} // Reversed responsive width
               color={Theme.colors.secondary[100]}
-              // borderColor="blue.500"
               backgroundColor={`${Theme.colors.primary[200]}90`}
               _hover={{ backgroundColor: Theme.colors.primary[200] }}
             >
