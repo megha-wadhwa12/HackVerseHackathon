@@ -37,6 +37,12 @@ CodeGen is a revolutionary platform aimed at enriching the coding experience thr
 
 - **Gemini**: Harness the power of Gemini for AI-powered text-to-image generation, ensuring high-quality visual outputs.
 
+## Deployment
+
+- **Backend (API) Deployment:** The backend of EduFlex is deployed on [Render]().
+
+- **Frontend Deployment:** The frontend of EduFlex is deployed on [Vercel](https://codegen-phi.vercel.app/).
+
 
 
 ## Contributing
