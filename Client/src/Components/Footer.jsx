@@ -20,7 +20,7 @@ const Footer = () => {
         px={[4, 6, 8, 10]} // Responsive padding
         pt={[8, 12, 16, "70px"]} // Responsive padding
         textAlign={"left"}
-        fontSize={["14px", "16px", "18px", "14px", "10px"]} // Responsive font size
+        fontSize={["14px", "16px", "18px", "14px", "14px"]} // Responsive font size
         gap={[6, 8, 10, 10]} // Responsive gap between sections
         width={["90%", "90%", "80%", "95%", "95%"]} // Responsive width
         m="0 auto" // Center align horizontally
@@ -106,9 +106,8 @@ const Footer = () => {
           {/* Copyright */}
           <Flex gap={0} mt={12} mb={5} align="center">
             <Icon as={RiCopyrightLine} mr={1} />
-            <Text fontSize={["10px", "10px", "12px", "10px"]} w="210px">
-              2024 Code Gen. All rights are reserved | Designed by Megha Wadhwa
-              & S P Jyotiranjan Sahoo
+            <Text fontSize={["10px", "10px", "12px", "10px"]} w={["210px", "310px", "410px"]}>
+              2024 Code Gen. All rights are reserved | Designed by WebWizards
             </Text>
           </Flex>
         </Flex>
