@@ -9,7 +9,7 @@ import { AppContext } from "../Context/ParentContext";
 import Features from "./Features";
 
 const Home = () => {
-  const { login } = useContext(AppContext);
+  const { login,featureRef } = useContext(AppContext);
   const navigate = useNavigate();
 
   const handleTryNowClick = () => {
@@ -57,9 +57,13 @@ const Home = () => {
             color={Theme.colors.secondary[100]}
             backgroundColor={`${Theme.colors.primary[200]}90`}
             _hover={{ backgroundColor: Theme.colors.primary[200] }}
-            onClick={handleTryNowClick}
+            onClick={() => {
+              if (featureRef.current) {
+                featureRef.current.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
           >
-            Try Now
+            Explore
           </Button>
         </Flex>
         <Features />

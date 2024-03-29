@@ -5,11 +5,13 @@ export const AppContext = createContext();
 const ParentContext = ({ children }) => {
   const [data, setData] = useState([]);
   const [user, setUser] = useState([]);
+  console.log(user);
   const [login, setLogin] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [value, setValue] = useState("");
   const footerRef = useRef(null);
   const aboutRef = useRef(null);
+  const featureRef = useRef(null)
 
   const setCookies = (name, value, expiry) => {
     const date = new Date();
@@ -47,6 +49,7 @@ const ParentContext = ({ children }) => {
         setValue,
         aboutRef,
         footerRef,
+        featureRef
       }}
     >
       {children}
