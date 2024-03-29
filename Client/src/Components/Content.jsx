@@ -10,7 +10,11 @@ import {
   Accordion,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
+import {
+  GoogleGenerativeAI,
+  HarmCategory,
+  HarmBlockThreshold,
+} from "@google/generative-ai";
 import { useNavigate } from "react-router-dom";
 
 import Background from "./../assets/EduFlexBackground.jpg";
@@ -44,15 +48,39 @@ const Content = () => {
       const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
       const chat = model.startChat({
         history: [
-          { role: "user", parts: [{ text: "You are making a learning content for a topic. Give 10 subtopic about the topic. only give subtopics, don't include decalration of response," }] },
+          {
+            role: "user",
+            parts: [
+              {
+                text: "You are making a learning content for a topic. Give 10 subtopic about the topic. only give subtopics, don't include decalration of response,",
+              },
+            ],
+          },
           { role: "model", parts: [{ text: "Ok, Please give me a topic" }] },
         ],
-        generationConfig: { maxOutputTokens: 10000, temperature: 0.9, topK: 1, topP: 1 },
+        generationConfig: {
+          maxOutputTokens: 10000,
+          temperature: 0.9,
+          topK: 1,
+          topP: 1,
+        },
         safetySettings: [
-          { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
-          { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
-          { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
-          { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+          {
+            category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+          },
+          {
+            category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+          },
+          {
+            category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+          },
+          {
+            category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+          },
         ],
       });
       const res = await chat.sendMessage(topic);
@@ -78,15 +106,39 @@ const Content = () => {
       const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
       const chat = model.startChat({
         history: [
-          { role: "user", parts: [{ text: "You are making a learning content for a topic. Give 300 words description about the topic. only give description, don't include decalration of response," }] },
+          {
+            role: "user",
+            parts: [
+              {
+                text: "You are making a learning content for a topic. Give 300 words description about the topic. only give description, don't include decalration of response,",
+              },
+            ],
+          },
           { role: "model", parts: [{ text: "Ok, Please give me a topic" }] },
         ],
-        generationConfig: { maxOutputTokens: 10000, temperature: 0.9, topK: 1, topP: 1 },
+        generationConfig: {
+          maxOutputTokens: 10000,
+          temperature: 0.9,
+          topK: 1,
+          topP: 1,
+        },
         safetySettings: [
-          { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
-          { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
-          { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
-          { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+          {
+            category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+          },
+          {
+            category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+          },
+          {
+            category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+          },
+          {
+            category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+          },
         ],
       });
       const res = await chat.sendMessage(topic);
@@ -113,63 +165,65 @@ const Content = () => {
         height={{ base: "30vh", md: "50vh" }}
         backgroundSize="cover"
       >
-<form onSubmit={handleSubmit} style={{ marginTop: "10vw" }}>
-  <Flex
-    direction={"column"}
-    w={{ base: "90vw", md: "80vw" }} 
-    h={{ base: "20vh", md: "10vw" }} 
-    justify={"space-between"}
-    align={"center"}
-    px={isMobile ? "0" : "2vw"} 
-  >
-    <input
-      type="text"
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
-      style={{
-        width: "100%",
-        height: isMobile ? "15vw" : "4vw", 
-        backgroundColor: `${Theme.colors.primary[200]}40`,
-        borderRadius: "2vw",
-        backdropFilter: "blur(7px)",
-        outline: "none",
-        padding: "0", 
-        margin: "0", 
-        color: "white",
-        border: "2px solid #ffffff30",
-        filter: "drop-shadow(0 0 1vw #ffffff90)",
-        fontSize: isMobile ? "4vw" : "1.4vw" ,
-        textAlign: "center",
-        letterSpacing: "0.1vw",
-        textTransform: "uppercase",
-        marginBottom: "10px"
-      }}
-      placeholder="WRITE ANY TOPIC YOU WANT TO LEARN"
-    />
-    <Button
-      w={{ base: "40vw", md: "10vw" }} 
-      h={{ base: "10vw", md: "3vw" }} 
-      color={Theme.colors.secondary[100]}
-      backgroundColor={`${Theme.colors.primary[200]}90`}
-      _hover={{ backgroundColor: Theme.colors.primary[200] }}
-      fontSize={{ base: "4vw", md: "1.3vw" }} 
-      type="submit"
-    >
-      Learn
-    </Button>
-  </Flex>
-</form>
-
-
-
-
+        <form onSubmit={handleSubmit} style={{ marginTop: "10vw" }}>
+          <Flex
+            direction={"column"}
+            w={{ base: "90vw", md: "80vw" }}
+            h={{ base: "20vh", md: "10vw" }}
+            justify={"space-between"}
+            align={"center"}
+            px={isMobile ? "0" : "2vw"}
+          >
+            <input
+              type="text"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              style={{
+                width: "100%",
+                height: isMobile ? "15vw" : "4vw",
+                backgroundColor: `${Theme.colors.primary[200]}40`,
+                borderRadius: "2vw",
+                backdropFilter: "blur(7px)",
+                outline: "none",
+                padding: "0",
+                margin: "0",
+                color: "white",
+                border: "2px solid #ffffff30",
+                filter: "drop-shadow(0 0 1vw #ffffff90)",
+                fontSize: isMobile ? "4vw" : "1.4vw",
+                textAlign: "center",
+                letterSpacing: "0.1vw",
+                textTransform: "uppercase",
+                marginBottom: "10px",
+              }}
+              placeholder="WRITE ANY TOPIC YOU WANT TO LEARN"
+            />
+            <Button
+              w={{ base: "40vw", md: "10vw" }}
+              h={{ base: "10vw", md: "3vw" }}
+              color={Theme.colors.secondary[100]}
+              backgroundColor={`${Theme.colors.primary[200]}90`}
+              _hover={{ backgroundColor: Theme.colors.primary[200] }}
+              fontSize={{ base: "4vw", md: "1.3vw" }}
+              type="submit"
+            >
+              Learn
+            </Button>
+          </Flex>
+        </form>
       </Flex>
 
       {contentFetched ? (
         <Flex direction={"column"} align={"center"} my={"3vw"}>
           {content !== "" && (
-            <Flex direction="column" align="center" mb="3vw"> 
-              <Heading style={{textTransform: "uppercase"}} color={"white"} mt={ isMobile ? "8vw" : "1vw"} mb={isMobile ? "8vw" : "4vw"} fontSize={isMobile ? "4xl" : "4xl"}>
+            <Flex direction="column" align="center" mb="3vw">
+              <Heading
+                style={{ textTransform: "uppercase" }}
+                color={"white"}
+                mt={isMobile ? "8vw" : "1vw"}
+                mb={isMobile ? "8vw" : "4vw"}
+                fontSize={isMobile ? "4xl" : "4xl"}
+              >
                 {value}
               </Heading>
               <Text w={"80vw"} textAlign={"center"} color={"white"}>
@@ -177,7 +231,10 @@ const Content = () => {
                   <>
                     {showFullContent ? content : `${content.slice(0, 200)}...`}
                     <br />
-                    <Button mt="10" onClick={() => setShowFullContent(!showFullContent)}>
+                    <Button
+                      mt="10"
+                      onClick={() => setShowFullContent(!showFullContent)}
+                    >
                       {showFullContent ? "Read less" : "Read more"}
                     </Button>
                   </>
@@ -197,7 +254,11 @@ const Content = () => {
       {fetched ? (
         <Flex direction={"column"} align={"center"}>
           {subTopics.length !== 0 && (
-            <Heading color={"white"} mb={"2vw"} fontSize={isMobile ? "3xl" : "4xl"}>
+            <Heading
+              color={"white"}
+              mb={"2vw"}
+              fontSize={isMobile ? "3xl" : "4xl"}
+            >
               Learn {value} in 10 parts
             </Heading>
           )}

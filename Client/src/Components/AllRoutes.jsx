@@ -5,6 +5,7 @@ import Home from "./Home";
 import Login from "./Login";
 import Signup from "./Signup";
 import Content from "./Content";
+import CodeGen from "./CodeGen";
 
 const AllRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AllRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/content" element={<Content />} />
+        <Route path="/codegen" element={<CodeGen/>}/>
       </Routes>
     </Box>
   );
