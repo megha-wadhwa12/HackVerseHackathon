@@ -62,7 +62,7 @@ const Home = () => {
             Try Now
           </Button>
         </Flex>
-        {login && <Features />}
+        <Features />
         <AboutUs />
         <Footer />
       </Box>
