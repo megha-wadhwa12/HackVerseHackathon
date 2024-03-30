@@ -66,6 +66,22 @@ const CodeGenerator = () => {
             role: "user",
             parts: [
               {
+                text: "If you find any similar code generated before in the history in the chat, rephrase the prompt and give code for that"
+              }
+            ]
+          },
+          {
+            role: "model",
+            parts: [
+              {
+                text: "I got it, If i encounter similar prompt, I will rephrase the prompt and give the code for the generated prompt."
+              }
+            ]
+          },
+          {
+            role: "user",
+            parts: [
+              {
                 text: `Give it in a proper markdown format. give comments such that it matches the appropriate language. give minimal comments`,
               },
             ],
@@ -82,7 +98,7 @@ const CodeGenerator = () => {
         ],
         generationConfig: {
           maxOutputTokens: 10000,
-          temperature: 0.7,
+          temperature: 0.9,
           topK: 1,
           topP: 1,
         },
@@ -112,6 +128,9 @@ const CodeGenerator = () => {
       setIsLoading(false);
     } catch (error) {
       console.log(error);
+      if(error){
+        genChat(history,prompt)
+      }
     }
   }
   useEffect(() => {
