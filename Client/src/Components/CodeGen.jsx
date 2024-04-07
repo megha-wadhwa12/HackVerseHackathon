@@ -10,7 +10,7 @@ import CodeConverter from "./CodeGenPanels/CodeConverter";
 
 const CodeGen = () => {
   return (
-    <Box background={Theme.colors.primary[100]} width="100vw" minH={"100vh"}>
+    <Box background={Theme.colors.primary[100]} width="100vw" minH={"100vh"} mt={["20vw", "10vw", "8vw"]}>
       <Box
         direction="column"
         justify="center"

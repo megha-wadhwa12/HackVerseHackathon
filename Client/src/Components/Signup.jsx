@@ -9,7 +9,7 @@ import {
   Input,
   Link,
 } from "@chakra-ui/react";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Background from "./../assets/EduFlexBackground.jpg";
 import Theme from "./Theme";
 import { useNavigate } from "react-router-dom";
@@ -32,6 +32,7 @@ const Signup = () => {
     errorMessage,
     setErrorMessage,
   } = useContext(AppContext);
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     register,
@@ -50,6 +51,7 @@ const Signup = () => {
 
   const PostRequest = async (data) => {
     try {
+      setIsLoading(true);
       const res = await axios.post(
         "https://hackversehackathon.onrender.com/api/Users/signup",
         {
@@ -57,6 +59,7 @@ const Signup = () => {
         }
       );
       setLogin(true);
+      setIsLoading(false);
       SuccessToastHandler();
       // const access = res.data.access_token;
 
@@ -64,6 +67,7 @@ const Signup = () => {
       setCookies("Password", res.data.postUser.Password, 30);
       setCookies("Name", res.data.postUser.Name, 30);
     } catch (error) {
+      setIsLoading(false);
       console.log("error", error);
       if (error.response && error.response.status === 400) {
         setErrorMessage(error.response.data);
@@ -122,12 +126,12 @@ const Signup = () => {
           <Flex
             borderRadius={[12]} // Responsive borderRadius
             backgroundColor={`${Theme.colors.primary[300]}90`}
-            width={["90vw",null,"50vw","35vw"]}
-            height={["89vh",null,"95vh","80vh"]}
+            width={["90vw", null, "50vw", "35vw"]}
+            height={["80vh", null, "95vh", "80vh"]}
             flexDir={"column"}
             p={"3vw"}
-            px={["8vw","3vw"]}
-            mt={["14vw", "10vw", "7vw", "7vw"]} // Responsive top margin
+            px={["8vw", "3vw"]}
+            mt={["20vw", "10vw", "8vw"]} // Responsive top margin
           >
             <Image
               src={Logo}
@@ -230,6 +234,7 @@ const Signup = () => {
                     {errorMessage && <Center>{errorMessage}</Center>}
                   </Flex>
                   <Button
+                    isLoading={isLoading}
                     bgColor={`${Theme.colors.primary[200]}80`}
                     _hover={{ backgroundColor: Theme.colors.primary[200] }}
                     color={"white"}

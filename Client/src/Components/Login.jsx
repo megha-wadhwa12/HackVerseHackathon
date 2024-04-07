@@ -126,7 +126,7 @@ const Login = () => {
           <Flex
             borderRadius={12}
             width={["90vw", "45vw", "36vw"]}
-            height={["80vh", "95vh", "78vh"]}
+            height={["70vh", "95vh", "60vh"]}
             backgroundColor={`${Theme.colors.primary[300]}90`}
             flexDir={"column"}
             p={"3vw"}
@@ -212,6 +212,7 @@ const Login = () => {
                     //   }
                     // }}
                     bgColor={Theme.colors.primary[100]}
+                    _hover={{ backgroundColor: Theme.colors.primary[200] }}
                     color={"white"}
                     borderRadius={4}
                     mt={2}

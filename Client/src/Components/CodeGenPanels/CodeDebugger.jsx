@@ -80,7 +80,7 @@ const CodeDebugger = () => {
           genChat(value);
         }}
       >
-        <Flex w={"80%"} h={"70vh"} justify={"space-between"}>
+        <Flex w={["100%","80%"]} mx={"auto"} h={["60vh","70vh"]} justify={"space-between"}>
           <Textarea
             color={"white"}
             borderRadius={"1vw"}
@@ -88,7 +88,7 @@ const CodeDebugger = () => {
             p={"1vw"}
             placeholder="Please Give code to debug"
             w={"45%"}
-            h={"65vh"}
+            h={["50vh","65vh"]}
             onChange={(e) => {
               setValue(e.target.value);
             }}
@@ -100,7 +100,7 @@ const CodeDebugger = () => {
             color={"white"}
             borderRadius={"1vw"}
             w={"45%"}
-            h={"65vh"}
+            h={["50vh","65vh"]}
             border={"0.2vw solid White"}
             p={"1vw"}
           >
