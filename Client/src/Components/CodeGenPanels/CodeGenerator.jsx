@@ -212,7 +212,7 @@ const CodeGenerator = () => {
         direction={"column"}
         align={"start"}
         w={"80vw"}
-        p={"1vw"}
+        p={["3vw","1vw"]}
         borderRadius={"1vw"}
         border={"0.2vw solid White"}
         h={["100vw", "50vw"]}
@@ -221,7 +221,7 @@ const CodeGenerator = () => {
         {chatHistory.map((e, i) => {
           return e.role == "user" ? (
             <Box key={i} marginBottom={"1vw"}>
-              <Text color={"white"} fontSize={"1.3vw"}>
+              <Text color={"white"} fontSize={["4vw","1.3vw"]}>
                 <ReactMarkdown>{`**User**: ${e.parts[0].text}`}</ReactMarkdown>
               </Text>
             </Box>
@@ -230,10 +230,10 @@ const CodeGenerator = () => {
               key={i}
               bgColor={"#00000090"}
               color={"white"}
-              w={"50%"}
+              w={"100%"}
               overflowY={"auto"}
               textAlign={"left"}
-              p={"1vw"}
+              p={["5vw","3vw"]}
               mb={"2vw"}
               borderRadius={"0.5vw"}
               border={"0.1vw solid #ffffff20"}
