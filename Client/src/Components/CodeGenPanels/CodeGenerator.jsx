@@ -66,17 +66,17 @@ const CodeGenerator = () => {
             role: "user",
             parts: [
               {
-                text: "If you find any similar code generated before in the history in the chat, rephrase the prompt and give code for that"
-              }
-            ]
+                text: "If you find any similar code generated before in the history in the chat, rephrase the prompt and give code for that",
+              },
+            ],
           },
           {
             role: "model",
             parts: [
               {
-                text: "I got it, If i encounter similar prompt, I will rephrase the prompt and give the code for the generated prompt."
-              }
-            ]
+                text: "I got it, If i encounter similar prompt, I will rephrase the prompt and give the code for the generated prompt.",
+              },
+            ],
           },
           {
             role: "user",
@@ -128,8 +128,8 @@ const CodeGenerator = () => {
       setIsLoading(false);
     } catch (error) {
       console.log(error);
-      if(error){
-        genChat(history,prompt)
+      if (error) {
+        genChat(history, prompt);
       }
     }
   }
@@ -212,7 +212,7 @@ const CodeGenerator = () => {
         direction={"column"}
         align={"start"}
         w={"80vw"}
-        p={["3vw","1vw"]}
+        p={["3vw", "1vw"]}
         borderRadius={"1vw"}
         border={"0.2vw solid White"}
         h={["100vw", "50vw"]}
@@ -221,7 +221,7 @@ const CodeGenerator = () => {
         {chatHistory.map((e, i) => {
           return e.role == "user" ? (
             <Box key={i} marginBottom={"1vw"}>
-              <Text color={"white"} fontSize={["4vw","1.3vw"]}>
+              <Text color={"white"} fontSize={["4vw", "1.3vw"]}>
                 <ReactMarkdown>{`**User**: ${e.parts[0].text}`}</ReactMarkdown>
               </Text>
             </Box>
@@ -233,7 +233,7 @@ const CodeGenerator = () => {
               w={"100%"}
               overflowY={"auto"}
               textAlign={"left"}
-              p={["5vw","3vw"]}
+              p={["5vw", "3vw"]}
               mb={"2vw"}
               borderRadius={"0.5vw"}
               border={"0.1vw solid #ffffff20"}
@@ -244,7 +244,7 @@ const CodeGenerator = () => {
             </Code>
           );
         })}
-        {isLoading&&<Spinner color="white" size={"lg"}/>}
+        {isLoading && <Spinner color="white" size={"lg"} />}
       </Flex>
     </Box>
   );

@@ -9,7 +9,7 @@ import { AppContext } from "../Context/ParentContext";
 import Features from "./Features";
 
 const Home = () => {
-  const { login,featureRef } = useContext(AppContext);
+  const { login, featureRef } = useContext(AppContext);
   const navigate = useNavigate();
 
   const handleTryNowClick = () => {

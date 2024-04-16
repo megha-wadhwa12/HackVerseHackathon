@@ -1,4 +1,12 @@
-import { Box, Button, Container, Flex, Textarea,  Spinner, Input } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Textarea,
+  Spinner,
+  Input,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
 import {
   GoogleGenerativeAI,
@@ -18,7 +26,7 @@ const CodeConverter = () => {
   const genAI = new GoogleGenerativeAI(gemini_key);
   async function genChat(value, prompt) {
     try {
-        setIsLoading(true)
+      setIsLoading(true);
       const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
       const chat = model.startChat({
         history: [
@@ -68,7 +76,7 @@ const CodeConverter = () => {
       const text = res.response.text();
       //   const withoutAsterisks = removeAsterisks(text);
       setContent(text);
-      setIsLoading(false)
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -78,18 +86,23 @@ const CodeConverter = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          if(value!="" && language!=""){
-            genChat(value,language);
-          }else if(value!="" && language==""){
-            setContent("# ***Please provide language to convert***")
-          }else if(value=="" && language!=""){
-            setContent("# ***Please Provide code***")
-          }else{
-            setContent("# ***Please Provide code and Programming Language***")
+          if (value != "" && language != "") {
+            genChat(value, language);
+          } else if (value != "" && language == "") {
+            setContent("# ***Please provide language to convert***");
+          } else if (value == "" && language != "") {
+            setContent("# ***Please Provide code***");
+          } else {
+            setContent("# ***Please Provide code and Programming Language***");
           }
         }}
       >
-        <Flex w={["100%","80%"]} mx={"auto"} h={["60vh","70vh"]} justify={"space-between"}>
+        <Flex
+          w={["100%", "80%"]}
+          mx={"auto"}
+          h={["60vh", "70vh"]}
+          justify={"space-between"}
+        >
           <Textarea
             color={"white"}
             borderRadius={"1vw"}
@@ -97,7 +110,7 @@ const CodeConverter = () => {
             p={"1vw"}
             placeholder="Please Give code to convert"
             w={"45%"}
-            h={["50vh","65vh"]}
+            h={["50vh", "65vh"]}
             onChange={(e) => {
               setValue(e.target.value);
             }}
@@ -109,7 +122,7 @@ const CodeConverter = () => {
             color={"white"}
             borderRadius={"1vw"}
             w={"45%"}
-            h={["50vh","65vh"]}
+            h={["50vh", "65vh"]}
             border={"0.2vw solid White"}
             p={"1vw"}
           >
@@ -122,12 +135,12 @@ const CodeConverter = () => {
             )}
           </Container>
         </Flex>
-        <Flex w={["100%","60%"]} justify={"space-between"} align={"center"}> 
-          <Box color={"white"} fontSize={["4vw","1.3vw"]}>
+        <Flex w={["100%", "60%"]} justify={"space-between"} align={"center"}>
+          <Box color={"white"} fontSize={["4vw", "1.3vw"]}>
             Convert to{" "}
             <Input
-            h={["7vw","2vw"]}
-            w={["60%","40%"]}
+              h={["7vw", "2vw"]}
+              w={["60%", "40%"]}
               style={{
                 backgroundColor: `${Theme.colors.primary[200]}40`,
                 borderRadius: "2vw",

@@ -3,7 +3,6 @@ import React from "react";
 import Logo from "./../../assets/CodeGen.png";
 import NavDrawer from "./NavDrawer";
 
-
 const NavBar_Responsive = () => {
   return (
     <Center>
@@ -12,24 +11,27 @@ const NavBar_Responsive = () => {
         backdropBlur={"5px"}
         pos={"fixed"}
         w={"95vw"}
-        h={'15vw'}
+        h={"15vw"}
         bgColor={"#220339e6"}
         top={"3vw"}
         borderRadius={"5vh"}
-        justify={'space-between'}
+        justify={"space-between"}
         align={"center"}
         px={"5vw"}
         border={"3px solid #10223060"}
         filter={"drop-shadow(0 0.5vw 0.3vw #00000040 )"}
         zIndex={"1"}
       >
-        <Box w={"33%"} _hover={{
-                filter: "drop-shadow(0 0 0.5vw #01EAF980)",
-              }}
-              transition={"all 0.2s"}>
+        <Box
+          w={"33%"}
+          _hover={{
+            filter: "drop-shadow(0 0 0.5vw #01EAF980)",
+          }}
+          transition={"all 0.2s"}
+        >
           <Img src={Logo} maxH={"8vw"} />
         </Box>
-        <NavDrawer/>
+        <NavDrawer />
       </Flex>
     </Center>
   );

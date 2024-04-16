@@ -14,7 +14,7 @@ import Theme from "./Theme";
 import { AppContext } from "../Context/ParentContext";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-// import { Link } from "react-router-dom";
+
 
 const Navbar = () => {
   const { login, setLogin, setCookies, getCookie, aboutRef, footerRef } =

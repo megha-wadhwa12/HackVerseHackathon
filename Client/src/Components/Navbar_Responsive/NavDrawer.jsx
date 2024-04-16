@@ -25,11 +25,11 @@ import Theme from "../Theme";
 const NavDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const { login, setLogin, setCookies, getCookie,aboutRef,footerRef }  = useContext(AppContext);
-  const navigate = useNavigate(null)
+  const { login, setLogin, setCookies, getCookie, aboutRef, footerRef } =
+    useContext(AppContext);
+  const navigate = useNavigate(null);
   const btnRef = useRef();
   const [isLoading, setIsLoading] = useState(false);
-
 
   return (
     <>
@@ -51,20 +51,20 @@ const NavDrawer = () => {
           </DrawerHeader>
           <DrawerBody mt={"5vw"}>
             <VStack align={"start"}>
-            <Link to={"/"}>
-              <Button
-                variant={"link"}
-                fontSize={"5vw"}
-                color={"white"}
-                h={[null, "5vw", null, "4.4vw"]}
-                _hover={{
-                  filter: "drop-shadow(0 0 0.2vw #ffffff90)",
-                }}
-                transition={"all 0.2s"}
-                onClick={onClose}
-              >
-                Home
-              </Button>
+              <Link to={"/"}>
+                <Button
+                  variant={"link"}
+                  fontSize={"5vw"}
+                  color={"white"}
+                  h={[null, "5vw", null, "4.4vw"]}
+                  _hover={{
+                    filter: "drop-shadow(0 0 0.2vw #ffffff90)",
+                  }}
+                  transition={"all 0.2s"}
+                  onClick={onClose}
+                >
+                  Home
+                </Button>
               </Link>
               <Button
                 variant={"link"}
@@ -103,34 +103,34 @@ const NavDrawer = () => {
                 About
               </Button>
               <Link to={"/login"}>
-            <Button
-              isLoading={isLoading}
-              onClick={() => {
-                setIsLoading(true);
-                if (login) {
-                  setLogin(false);
-                  deleteCookie("UserName");
-                  deleteCookie("Password");
-                  deleteCookie("Name");
-                } else {
-                  navigate("/login");
-                }
-                setTimeout(() => {
-                  setIsLoading(false);
-                }, 2000);
-                onClose()
-              }}
-              borderRadius={"5vw"}
-              h={"10vw"}
-              w={"30vw"}
-              fontSize={"5vw"}
-              bgColor={`${Theme.colors.primary[200]}40`}
-              _hover={{ backgroundColor: Theme.colors.primary[200] }}
-              color={"white"}
-            >
-              {login ? "LOGOUT" : "LOGIN"}
-            </Button>
-          </Link>
+                <Button
+                  isLoading={isLoading}
+                  onClick={() => {
+                    setIsLoading(true);
+                    if (login) {
+                      setLogin(false);
+                      deleteCookie("UserName");
+                      deleteCookie("Password");
+                      deleteCookie("Name");
+                    } else {
+                      navigate("/login");
+                    }
+                    setTimeout(() => {
+                      setIsLoading(false);
+                    }, 2000);
+                    onClose();
+                  }}
+                  borderRadius={"5vw"}
+                  h={"10vw"}
+                  w={"30vw"}
+                  fontSize={"5vw"}
+                  bgColor={`${Theme.colors.primary[200]}40`}
+                  _hover={{ backgroundColor: Theme.colors.primary[200] }}
+                  color={"white"}
+                >
+                  {login ? "LOGOUT" : "LOGIN"}
+                </Button>
+              </Link>
             </VStack>
           </DrawerBody>
         </DrawerContent>

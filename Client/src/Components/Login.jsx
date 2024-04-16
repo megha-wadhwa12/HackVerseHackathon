@@ -20,7 +20,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { AppContext } from "../Context/ParentContext";
-import Logo from "./../assets/EduFlexLogo.png";
+import Logo from "./../assets/CodeGen.png";
 
 const Login = () => {
   const Navigate = useNavigate();
