@@ -47,7 +47,7 @@ CodeGen is a revolutionary platform aimed at enriching the coding experience thr
 
 ## Contributing
 
-We welcome contributions from the community to improve EduFlex. If you'd like to contribute, please follow these guidelines:
+We welcome contributions from the community to improve CodeGen. If you'd like to contribute, please follow these guidelines:
 
 1. **Fork** the repository by clicking the "Fork" button on the top right corner of this page.
 2. **Clone** your forked repository to your local machine. Replace `{your-username}` with your GitHub username:
@@ -82,7 +82,7 @@ We welcome contributions from the community to improve EduFlex. If you'd like to
    - Provide a clear title and description for your PR, explaining the changes you've made.
    - Once reviewed, your PR will be merged into the main branch.
 
-By following these steps, you can help improve EduFlex and contribute to making it even better for users. We appreciate your contributions!
+By following these steps, you can help improve CodeGen and contribute to making it even better for users. We appreciate your contributions!
 
 
 
