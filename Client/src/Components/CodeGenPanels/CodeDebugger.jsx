@@ -17,7 +17,7 @@ const CodeDebugger = () => {
   const genAI = new GoogleGenerativeAI(gemini_key);
   async function genChat(prompt) {
     try {
-        setIsLoading(true)
+      setIsLoading(true);
       const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
       const chat = model.startChat({
         history: [
@@ -67,7 +67,7 @@ const CodeDebugger = () => {
       const text = res.response.text();
       //   const withoutAsterisks = removeAsterisks(text);
       setContent(text);
-      setIsLoading(false)
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -80,7 +80,12 @@ const CodeDebugger = () => {
           genChat(value);
         }}
       >
-        <Flex w={["100%","80%"]} mx={"auto"} h={["60vh","70vh"]} justify={"space-between"}>
+        <Flex
+          w={["100%", "80%"]}
+          mx={"auto"}
+          h={["60vh", "70vh"]}
+          justify={"space-between"}
+        >
           <Textarea
             color={"white"}
             borderRadius={"1vw"}
@@ -88,7 +93,7 @@ const CodeDebugger = () => {
             p={"1vw"}
             placeholder="Please Give code to debug"
             w={"45%"}
-            h={["50vh","65vh"]}
+            h={["50vh", "65vh"]}
             onChange={(e) => {
               setValue(e.target.value);
             }}
@@ -100,7 +105,7 @@ const CodeDebugger = () => {
             color={"white"}
             borderRadius={"1vw"}
             w={"45%"}
-            h={["50vh","65vh"]}
+            h={["50vh", "65vh"]}
             border={"0.2vw solid White"}
             p={"1vw"}
           >

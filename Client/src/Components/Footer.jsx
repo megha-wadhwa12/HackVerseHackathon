@@ -106,7 +106,10 @@ const Footer = () => {
           {/* Copyright */}
           <Flex gap={0} mt={12} mb={5} align="center">
             <Icon as={RiCopyrightLine} mr={1} />
-            <Text fontSize={["10px", "10px", "12px", "10px"]} w={["210px", "310px", "410px"]}>
+            <Text
+              fontSize={["10px", "10px", "12px", "10px"]}
+              w={["210px", "310px", "410px"]}
+            >
               2024 Code Gen. All rights are reserved | Designed by WebWizards
             </Text>
           </Flex>
