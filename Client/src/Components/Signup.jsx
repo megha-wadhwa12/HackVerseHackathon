@@ -53,7 +53,7 @@ const Signup = () => {
     try {
       setIsLoading(true);
       const res = await axios.post(
-        "https://hackversehackathon.onrender.com/api/Users/signup",
+        "https://hackversehackathon-fni8.onrender.com/api/Users/signup",
         {
           ...data,
         }

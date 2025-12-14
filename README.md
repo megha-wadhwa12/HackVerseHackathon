@@ -39,7 +39,7 @@ CodeGen is a revolutionary platform aimed at enriching the coding experience thr
 
 ## Deployment
 
-- **Backend (API) Deployment:** The backend of CodeGen is deployed on [Render](https://hackversehackathon.onrender.com).
+- **Backend (API) Deployment:** The backend of CodeGen is deployed on [Render](https://hackversehackathon-fni8.onrender.com).
 
 - **Frontend Deployment:** The frontend of CodeGen is deployed on [Vercel](https://codegen-phi.vercel.app/).
 

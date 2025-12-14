@@ -49,7 +49,7 @@ const Login = () => {
       setIsLoading(true);
       console.log("data", data);
       const res = await axios.post(
-        "https://hackversehackathon.onrender.com/api/Users/login",
+        "https://hackversehackathon-fni8.onrender.com/api/Users/login",
         {
           ...data,
         }
